@@ -2,7 +2,7 @@
 export function initMenu() {
   const menuBtn = document.getElementById('menu-btn');
   const menu = document.getElementById('menu');
-  const menuOverlay = createMenuOverlay();
+  const menuOverlay = document.getElementById('menu-overlay');
 
   if (!menuBtn || !menu) return;
 
@@ -18,7 +18,9 @@ export function initMenu() {
   });
 
   // Cerrar al hacer click en overlay
-  menuOverlay.addEventListener('click', closeMenu);
+  if (menuOverlay) {
+    menuOverlay.addEventListener('click', closeMenu);
+  }
 
   // Cerrar con ESC
   document.addEventListener('keydown', (e) => {
@@ -35,28 +37,15 @@ export function initMenu() {
   function openMenu() {
     menu.classList.add('menu-open');
     menuBtn.setAttribute('aria-expanded', 'true');
-    menuOverlay.classList.add('active');
+    if (menuOverlay) menuOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
   function closeMenu() {
     menu.classList.remove('menu-open');
     menuBtn.setAttribute('aria-expanded', 'false');
-    menuOverlay.classList.remove('active');
+    if (menuOverlay) menuOverlay.classList.remove('active');
     document.body.style.overflow = '';
-  }
-
-  function createMenuOverlay() {
-    let overlay = document.getElementById('menu-overlay');
-
-    if (!overlay) {
-      overlay = document.createElement('div');
-      overlay.id = 'menu-overlay';
-      overlay.className = 'fixed inset-0 bg-black/50 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300';
-      document.body.appendChild(overlay);
-    }
-
-    return overlay;
   }
 }
 

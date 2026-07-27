@@ -197,3 +197,7 @@ h6 {
 #menu {
   z-index: 50;
 }
+
+#menu.menu-open {
+  transform: translateX(0);
+}
