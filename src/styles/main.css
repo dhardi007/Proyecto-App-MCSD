@@ -50,17 +50,60 @@ h6 {
 }
 
 .nav-link {
-  color: white;
+  color: #cdc8c8;
   font-weight: 500;
   transition: all 0.3s ease;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.15);
-  color: white;
-  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+/* Text visibility utilities for white/light text on light backgrounds */
+.text-muted-white {
+  color: #cdc8c8;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.text-muted-white-lg {
+  color: #cdc8c8;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.text-muted-white-xl {
+  color: #cdc8c8;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Hero title text shadows for better visibility on #afe4e1 */
+.hero-title-shadow {
+  color: #134e4a;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-subtitle-shadow {
+  color: #0f766e;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-desc-shadow {
+  color: #134e4a;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Card title/description shadows */
+.card-title-shadow {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.card-desc-shadow {
+  color: #e0e0e0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(0, 0, 0, 0.15);
 }
 
 /* Glassmorphism utility */
