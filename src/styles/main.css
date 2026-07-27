@@ -242,5 +242,5 @@ h6 {
 }
 
 #menu.menu-open {
-  transform: translateX(0);
+  transform: translateX(0) !important;
 }
