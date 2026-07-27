@@ -14,43 +14,126 @@
 <body class="min-h-screen bg-gradient-to-br from-cyan-50 to-blue-50 flex flex-col">
 
   <!-- Header / Navbar -->
-  <header class="fixed top-0 left-0 right-0 z-40 bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg">
+  <header class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-[#3fa099]">
     <div class="container mx-auto px-4 py-4">
-      <div class="flex items-center justify-between">
-        <a href="index.html" class="flex items-center gap-3 group">
-          <img src="img/logo.png" alt="Logo MCSD" class="w-14 h-14 transition-transform group-hover:scale-110">
-          <img src="img/titulo_vehiculos.png" alt="Los Vehículos" class="h-12 hidden sm:block">
-        </a>
-
-        <nav class="hidden md:flex items-center gap-6">
-          <a href="index.html" class="text-white hover:text-purple-200 transition-colors font-medium">Inicio</a>
-          <a href="nosotros.html" class="text-white hover:text-purple-200 transition-colors font-medium">Nosotros</a>
-          <a href="contactos.html" class="text-white hover:text-purple-200 transition-colors font-medium">Contactos</a>
-          <a href="numeros.html" class="text-white hover:text-purple-200 transition-colors font-medium">Números</a>
-        </nav>
-
-        <button id="menu-btn"
-                class="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
-                aria-label="Abrir menú"
-                aria-expanded="false">
+      <div class="flex items-center justify-center gap-8">
+        <!-- Mobile Menu Button (left) -->
+        <button
+          id="menu-btn"
+          class="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
           <span class="iconify" data-icon="mdi:menu" data-width="32"></span>
         </button>
+
+        <!-- Logo Centered -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img
+            src="img/logo.png"
+            alt="Logo MCSD"
+            class="w-14 h-14 transition-transform group-hover:scale-110"
+          />
+          <img
+            src="img/MCSD.png"
+            alt="MCSD"
+            class="h-12 hidden sm:block"
+          />
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex items-center gap-6">
+          <a
+            href="index.html"
+            class="text-white hover:text-cyan-200 transition-colors font-medium"
+            >Inicio</a
+          >
+          <a
+            href="nosotros.html"
+            class="text-white hover:text-cyan-200 transition-colors font-medium"
+            >Nosotros</a
+          >
+          <a
+            href="contactos.html"
+            class="text-white hover:text-cyan-200 transition-colors font-medium"
+            >Contactos</a
+          >
+          <a
+            href="numeros.html"
+            class="text-white hover:text-cyan-200 transition-colors font-medium"
+            >Números</a
+          >
+        </nav>
       </div>
     </div>
   </header>
 
   <!-- Mobile Menu -->
-  <nav id="menu" class="fixed top-0 right-0 h-full w-64 bg-gradient-to-b from-purple-600 to-pink-600 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 md:hidden">
+  <nav
+    id="menu"
+    class="fixed top-0 right-0 h-full w-64 bg-[#3fa099] shadow-2xl z-50 transform translate-x-full transition-transform duration-300 md:hidden"
+  >
     <div class="p-6">
-      <button class="absolute top-4 right-4 p-2 text-white hover:bg-white/10 rounded-lg transition-colors" onclick="document.getElementById('menu').classList.remove('menu-open')">
+      <button
+        class="absolute top-4 right-4 p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
+        onclick="document.getElementById('menu').classList.remove('menu-open')"
+      >
         <span class="iconify" data-icon="mdi:close" data-width="24"></span>
       </button>
 
       <ul class="mt-12 space-y-4">
-        <li><a href="index.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors font-medium"><span class="iconify inline-block mr-2" data-icon="mdi:home" data-width="20"></span>Inicio</a></li>
-        <li><a href="nosotros.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors font-medium"><span class="iconify inline-block mr-2" data-icon="mdi:account-group" data-width="20"></span>Nosotros</a></li>
-        <li><a href="contactos.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors font-medium"><span class="iconify inline-block mr-2" data-icon="mdi:email" data-width="20"></span>Contactos</a></li>
-        <li><a href="numeros.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors font-medium"><span class="iconify inline-block mr-2" data-icon="mdi:phone" data-width="20"></span>Números</a></li>
+        <li>
+          <a
+            href="index.html"
+            class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors font-medium"
+          >
+            <span
+              class="iconify inline-block mr-2"
+              data-icon="mdi:home"
+              data-width="20"
+            ></span>
+            Inicio
+          </a>
+        </li>
+        <li>
+          <a
+            href="nosotros.html"
+            class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors font-medium"
+          >
+            <span
+              class="iconify inline-block mr-2"
+              data-icon="mdi:account-group"
+              data-width="20"
+            ></span>
+            Nosotros
+          </a>
+        </li>
+        <li>
+          <a
+            href="contactos.html"
+            class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors font-medium"
+          >
+            <span
+              class="iconify inline-block mr-2"
+              data-icon="mdi:email"
+              data-width="20"
+            ></span>
+            Contactos
+          </a>
+        </li>
+        <li>
+          <a
+            href="numeros.html"
+            class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors font-medium"
+          >
+            <span
+              class="iconify inline-block mr-2"
+              data-icon="mdi:phone"
+              data-width="20"
+            ></span>
+            Números
+          </a>
+        </li>
       </ul>
     </div>
   </nav>

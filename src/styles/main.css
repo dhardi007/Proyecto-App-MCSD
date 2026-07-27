@@ -6,10 +6,12 @@
 
 /* Variables CSS personalizadas */
 :root {
-  --color-bg-primary: #f0fdfc;
-  --color-bg-secondary: #b8f0ed;
+  --color-bg-primary: #afe4e1;
+  --color-bg-secondary: #b8e4e1;
   --color-text-primary: #134e4a;
   --color-text-secondary: #0f766e;
+  --color-navbar: #3fa099;
+  --color-navbar-hover: #2d8a84;
 }
 
 /* Estilos base */
@@ -25,7 +27,7 @@ html {
 
 body {
   font-family: "Inter", system-ui, sans-serif;
-  background: linear-gradient(135deg, #f0fdfc 0%, #ccfbf6 100%);
+  background: #afe4e1;
   color: var(--color-text-primary);
   overflow-x: hidden;
 }
@@ -41,6 +43,26 @@ h6 {
   font-weight: 700;
 }
 
+/* Navbar styles */
+.header-nav {
+  background-color: var(--color-navbar);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-link {
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  transform: translateY(-1px);
+}
+
 /* Glassmorphism utility */
 .glass {
   background: rgba(255, 255, 255, 0.15);
@@ -51,7 +73,7 @@ h6 {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #14b8a6 0%, #0ea5e9 100%);
+  background: linear-gradient(135deg, #007990 0%, #00b1b4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -63,16 +85,16 @@ h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f0fdfc;
+  background: #afe4e1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #14b8a6 0%, #0ea5e9 100%);
+  background: linear-gradient(180deg, #007990 0%, #00b1b4 100%);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #0d9488 0%, #0284c7 100%);
+  background: linear-gradient(180deg, #005f6f 0%, #007990 100%);
 }
 
 /* Animación de entrada para splash */
@@ -88,4 +110,90 @@ h6 {
 
 .splash-exit {
   animation: fadeOut 0.5s ease-out forwards;
+}
+
+/* Botón volver al inicio */
+.btn-back-top {
+  margin-top: 3rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  background: var(--color-navbar);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 121, 144, 0.3);
+}
+
+.btn-back-top:hover {
+  background: var(--color-navbar-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 121, 144, 0.4);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 121, 144, 0.15);
+}
+
+/* Logo blink animation */
+@keyframes logoBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.logo-blink {
+  animation: logoBlink 2s ease-in-out infinite;
+}
+
+/* Text shadow for better visibility on light background */
+.text-shadow-lg {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-xl {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Dominican flag colors animation */
+@keyframes dominicanColors {
+  0%, 100% { color: #CE1126; } /* Red */
+  33% { color: #FFFFFF; }       /* White */
+  66% { color: #002D62; }       /* Blue */
+}
+
+.dominican-colors {
+  animation: dominicanColors 3s ease-in-out infinite;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Fix mobile menu z-index */
+#menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 40;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#menu {
+  z-index: 50;
 }
